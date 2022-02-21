@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Launch from "./components/Launch";
+import Title from "./components/Title";
 
 function App() {
+  const [launches, setLaunches] = useState([]);
+  const [isLoaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("https://api.spacexdata.com/v5/launches")
+      .then((res) => res.json())
+      .then((launch) => {
+        setLaunches(launch[15]);
+        setLoaded(true);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log(launches);
+  }, [launches]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <Title />
+      {isLoaded ? <Launch {...launches} /> : ""}
     </div>
   );
 }
