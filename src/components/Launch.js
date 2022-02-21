@@ -4,6 +4,12 @@ const Launch = ({ name, links }) => {
   const { flickr } = links;
   const [index, setIndex] = useState(0);
 
+  const getRandomNumber = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   return (
     <section className="h-100 ">
       <div className="text-center mt-5 mb-5 px-3 ">
@@ -48,7 +54,15 @@ const Launch = ({ name, links }) => {
           </button>
         </div>
       </div>
-
+      <div className="px-5 mt-4 d-flex justify-content-center">
+        <button
+          onClick={() =>
+            setIndex(getRandomNumber(0, flickr.original.length - 1))
+          }
+        >
+          Random picture
+        </button>
+      </div>
       <div></div>
     </section>
   );
