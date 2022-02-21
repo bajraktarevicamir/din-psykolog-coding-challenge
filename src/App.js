@@ -15,10 +15,6 @@ function App() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(launches);
-  }, [launches]);
-
   return (
     <div className="container-fluid">
       <Title />
