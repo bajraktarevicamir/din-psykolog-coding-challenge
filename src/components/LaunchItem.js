@@ -6,7 +6,7 @@ import KeyboardDoubleArrowLeftRounded from "@mui/icons-material/KeyboardDoubleAr
 const LaunchItem = ({ index, flickr, setIndex, name }) => {
   return (
     <div className="row px-5 mt-5 align-items-center">
-      <div className="col-1 col-md-3 d-flex justify-content-center">
+      <div className="col-2 col-md-3 d-flex justify-content-center">
         <button
           className="launch-toggle-button align-middle"
           onClick={() => {
@@ -20,7 +20,7 @@ const LaunchItem = ({ index, flickr, setIndex, name }) => {
           <KeyboardDoubleArrowLeftRounded />
         </button>
       </div>
-      <div className="col-10 col-md-6 d-flex justify-content-center">
+      <div className="col-8 col-md-6 d-flex justify-content-center">
         {flickr?.original.length > 0 ? (
           <img
             className="img-fluid launch-picture"
@@ -31,7 +31,7 @@ const LaunchItem = ({ index, flickr, setIndex, name }) => {
           "No picture available"
         )}
       </div>
-      <div className="col-1 col-md-3 d-flex justify-content-center">
+      <div className="col-2 col-md-3 d-flex justify-content-center">
         <button
           className="launch-toggle-button"
           onClick={() => {
