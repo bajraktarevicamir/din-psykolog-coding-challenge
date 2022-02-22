@@ -56,8 +56,8 @@ body {
 
 @media (min-width: 320px) {
   .launch-toggle-button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
   .launch-random-button {
     width: 100%;
